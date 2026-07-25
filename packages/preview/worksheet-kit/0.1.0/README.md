@@ -1,0 +1,34 @@
+# worksheet-kit
+
+Reusable components for guided worksheets in Typst. Built for my [math-work](https://github.com/ZaneH/math-work) repo.
+
+```typ
+#import "@preview/worksheet-kit:0.1.0": *
+```
+
+## Components
+
+| Component | Purpose |
+|---|---|
+| `#kernelbox[...]` | Facts worth memorising — everything else is derived from these |
+| `#stepbox(title, body)` | Worked derivation step. Use `[]` not `""` if the title contains math |
+| `#appbox(title, body)` | Application or "in practice" example |
+| `#definition(term, body)` | Vocabulary introduction |
+| `#hint[...]` | A nudge without giving away the answer |
+| `#problem[...]` | Auto-numbered practice problem |
+| `#workspace(lines, title)` | Ruled space for working by hand. Defaults: 5 lines, "Try it yourself:" |
+| `#blanks(width)` | Inline fill-in-the-blank, e.g. `#blanks(2cm)` |
+| `#nobreak[...]` | Ensure related content stays together |
+
+## Build Sample
+
+See `sample.typ` for a full working example. To compile the sample, run this in the package root:
+
+```sh
+$ typst compile --root . examples/sample.typ
+```
+
+## Agentic Workflow
+
+See `AGENTS.md` for my system prompt and customize it to your liking. In the initial prompt, it is useful to include the
+contents of `examples/sample.typ`. I'm using Claude Projects to organize everything.
